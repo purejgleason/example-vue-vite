@@ -2,9 +2,13 @@ import {createApp} from 'vue';
 import App from './App.vue';
 import {mainRoutes} from './router/index.mjs';
 import {createAuth0} from '@auth0/auth0-vue';
+const { createVuetify } = Vuetify
+
+
 
 class VueApp {
   async bootstrap() {
+    const vuetify = createVuetify()
     const response = await axios.get('/environment'); // eslint-disable-line no-unused-vars
     this.env = response.data;
     this.app = createApp(App);
@@ -20,7 +24,10 @@ class VueApp {
       console.info('No Auth0 Config Found, Authentication unavailable');
       this.app.config.globalProperties.$authConfigured = false;
     }
-    return this.app.use(mainRoutes)
+
+    return this.app
+        .use(vuetify)
+        .use(mainRoutes)
         .mount('#app');
   }
 }
