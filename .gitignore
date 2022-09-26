@@ -106,6 +106,8 @@ dist
 
 # Idea
 .idea
+*.iml
 
 # VCCode
 .vscode
+
