@@ -1,11 +1,9 @@
 import vue from "@vitejs/plugin-vue";
-import vuetify from "vite-plugin-vuetify";
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [
     vue(),
-    vuetify({ autoImport: true }),
   ],
   build: {
     minify: true,
@@ -23,6 +21,8 @@ export default defineConfig({
     port: process.env.PORT || 8080,
   },
   test: {
+    environment: 'happy-dom',
+    globals: ['vitest/globals'],
     coverage: {
       reporter: ['html'],
     },

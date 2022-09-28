@@ -1,8 +1,6 @@
 <template>
   <h1>Now Vue is working</h1>
-  <v-app>
-    <v-btn @click="onClick">Test button</v-btn>
-  </v-app>
+  <button @click="onClick">Test button</button>
 </template>
 <script setup>
 import {ref} from "vue";

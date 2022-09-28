@@ -1,15 +1,16 @@
-import { assert, describe, it, beforeAll } from 'vitest';
+import { describe, it, beforeAll } from 'vitest';
 import { mount } from '@vue/test-utils';
 import App from "../src/App.vue";
 
 describe("App", ()=>{
+  expect(App).toBeTruthy()
   let wrapper;
-  beforeAll("Setup the app",()=>{
+  beforeAll(()=>{
     wrapper = mount(App);
-    assert("The app should have a value of 0 to start", wrapper.vm.$.setupState.value == 0);
+    expect(wrapper.vm.$.setupState.value).eq(0);
   })
   it("Simple Click Test", async ()=>{
-    await wrapper.get('button').trigger('click')
-    assert("The app should have a value of 1 after click", wrapper.vm.$.setupState.value == 1);
+    await wrapper.get('button').trigger('click');
+    expect(wrapper.vm.$.setupState.value).eq(1);
   })
 })
