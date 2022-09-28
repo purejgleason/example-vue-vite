@@ -20,6 +20,13 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: process.env.PORT || 8080,
+    proxy: {
+      "/environment": {
+        target: process.env.CLOUD_URL,
+        autoRewrite: true,
+        changeOrigin: true,
+      },
+    },
   },
   test: {
     environment: 'happy-dom',
