@@ -4,8 +4,23 @@ This is a simple Vite application with things like testing, proxying, etc workin
 
 ## Getting started
 
+### Prereqs
+
 1. Install dependencies with `npm i`
 2. Ensure Docker desktop is installed
+3. Make sure you have a cloud function running and `CLOUD_URL` environment variable pointing at this service.
+   1. This service should provide environment configuration in the form of a JSON object.
+
+       ```
+       {
+         "auth0": {
+           "domain": "...",
+           "clientId": "...",
+           "audience": "...",
+           "defaultScope": "view:app"
+         }
+       }
+       ```
 
 ## Run with Proxy
 
