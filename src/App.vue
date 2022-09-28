@@ -1,13 +1,18 @@
 <template>
   <div class="wrapper">
     <div class="links">
-      <router-link to="/">Go to Home</router-link>
-      <router-link class="other" to="/Other">Go to elsewhere</router-link>
+      <router-link to="/">
+        Go to Home
+      </router-link>
+      <router-link
+        class="other"
+        to="/Other"
+      >
+        Go to elsewhere
+      </router-link>
     </div>
-    <router-view></router-view>
+    <router-view />
   </div>
-
-
 </template>
 <script setup>
 </script>
