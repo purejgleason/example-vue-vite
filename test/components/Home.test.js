@@ -1,12 +1,12 @@
 import { describe, it, beforeAll } from 'vitest';
 import { mount } from '@vue/test-utils';
-import Home from "../src/components/Home.vue";
+import Home from "../../src/components/Home.vue";
 
 describe("Home", ()=>{
   expect(Home).toBeTruthy()
   let wrapper;
   beforeAll(()=>{
-    wrapper = mount(App);
+    wrapper = mount(Home);
     expect(wrapper.vm.$.setupState.value).eq(0);
   })
   it("Simple Click Test", async ()=>{
