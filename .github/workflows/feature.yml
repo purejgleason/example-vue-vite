@@ -38,5 +38,5 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: npm ci
-      - name: Test App
+      - name: Build App
         run: npx vite build

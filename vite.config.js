@@ -1,5 +1,10 @@
 import vue from "@vitejs/plugin-vue";
 import { defineConfig } from 'vitest/config';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [
@@ -8,10 +13,6 @@ export default defineConfig({
   build: {
     minify: true,
     soucemap: "inline",
-    lib: {
-      name: 'index',
-      formats: ['es'],
-    }
   },
   resolve: {
     extensions: [".js", ".vue", ".mjs"],
