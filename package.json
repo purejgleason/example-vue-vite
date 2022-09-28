@@ -12,13 +12,13 @@
     "@vitejs/plugin-vue": "latest",
     "@vitest/coverage-c8": "latest",
     "@vue/test-utils": "latest",
+    "eslint": "latest",
+    "eslint-config-google": "latest",
+    "eslint-plugin-vue": "latest",
     "happy-dom": "latest",
     "vite": "latest",
     "vitest": "latest",
     "vue": "latest",
-    "vue-router": "^4.1.5",
-    "eslint": "latest",
-    "eslint-config-google": "latest",
-    "eslint-plugin-vue": "latest"
+    "vue-router": "^4.1.5"
   }
 }

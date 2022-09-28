@@ -111,3 +111,7 @@ dist
 # VCCode
 .vscode
 
+#keys
+*.crt
+*.key
+
