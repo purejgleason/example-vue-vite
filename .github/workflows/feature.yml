@@ -19,7 +19,9 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Test App
-        run: npx vitest run --coverage
+        run: |
+          npx vitest run --coverage
+          npm run lint
   Build:
     name: 'Build Vite App'
     runs-on: ubuntu-latest
@@ -30,8 +32,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16
-      - name: Run lint
-        run: npx eslint
       - name: Install Dependencies
         run: npm ci
       - name: Build App

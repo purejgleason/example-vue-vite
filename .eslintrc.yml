@@ -15,4 +15,7 @@ plugins:
   - vue
 rules: {
   quotes: [ 'error', 'single' ],
+  vue/multi-word-component-names: ["warn"],
+  max-len: ['warn'],
+  require-jsdoc: ['warn']
 }

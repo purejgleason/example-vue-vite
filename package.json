@@ -6,7 +6,9 @@
   "author": "Jackie Gleason",
   "license": "MIT",
   "scripts": {
-    "test": "vitest run --coverage"
+    "test": "vitest run --coverage",
+    "lint": "eslint \"**/*.js\" \"**/*.vue\" \"**/*.mjs\"",
+    "lint:fix": "eslint --fix \"**/*.js\" \"**/*.vue\" \"**/*.mjs\""
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "latest",
