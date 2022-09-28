@@ -1,11 +1,22 @@
 <template>
-  <h1>Now Vue is working</h1>
-  <button @click="onClick">Test button</button>
+  <div class="wrapper">
+    <div class="links">
+      <router-link to="/">Go to Home</router-link>
+      <router-link class="other" to="/Other">Go to elsewhere</router-link>
+    </div>
+    <router-view></router-view>
+  </div>
+
+
 </template>
 <script setup>
-import {ref} from "vue";
-const value = ref(0);
-const onClick = (event)=>{
-  value.value=1;
-}
 </script>
+<style scoped>
+.links{
+  display:flex;
+}
+.wrapper{
+  display:flex;
+  flex-direction: column;
+}
+</style>
