@@ -12,6 +12,10 @@
     "happy-dom": "latest",
     "vite": "latest",
     "vitest": "latest",
-    "vue": "latest"
+    "vue": "latest",
+    "vue-router": "^4.1.5",
+    "eslint": "latest",
+    "eslint-config-google": "latest",
+    "eslint-plugin-vue": "latest"
   }
 }
