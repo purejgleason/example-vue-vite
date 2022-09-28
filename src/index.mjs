@@ -1,5 +1,5 @@
 import App from "./App.vue";
-const { createApp } = Vue;
+import { createApp } from 'vue';
 
 createApp(App)
   .mount('#app');

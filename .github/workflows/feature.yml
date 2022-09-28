@@ -1,0 +1,42 @@
+name: Branch and PR CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - "**"
+jobs:
+  Test:
+    name: 'Test Vite App'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout App
+        uses: actions/checkout@v2
+      - name: Setup Node Version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Install Dependencies
+        run: npm ci
+#      - name: Run Quality Checks
+#        run: npm run lint && npm run depcheck
+      - name: Test App
+        run: npx vitest run --coverage
+  #      - name: Analyze with SonarCloud
+  #        uses: sonarsource/sonarcloud-github-action@master
+  #        env:
+  #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  Build:
+    name: 'Build Vite App'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout App
+        uses: actions/checkout@v2
+      - name: Setup Node Version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build App
+        run: npx vite build

@@ -6,7 +6,12 @@
   "author": "Jackie Gleason",
   "license": "MIT",
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.1.0",
-    "vite": "latest"
+    "@vitejs/plugin-vue": "latest",
+    "@vitest/coverage-c8": "latest",
+    "@vue/test-utils": "latest",
+    "happy-dom": "latest",
+    "vite": "latest",
+    "vitest": "latest",
+    "vue": "latest"
   }
 }
