@@ -2,6 +2,7 @@ import {describe, it, beforeAll} from 'vitest';
 import {mount} from '@vue/test-utils';
 import {mainRoutes} from '../src/router/index.mjs';
 import App from '../src/App.vue';
+import {nextTick} from "vue";
 
 describe('App', ()=>{
   expect(App).toBeTruthy();
@@ -15,8 +16,12 @@ describe('App', ()=>{
         plugins: [mainRoutes],
       },
     });
-
-    // expect(wrapper.html()).toContain('Welcome Home');
+    wrapper.vm.$.setupState.auth0 = {
+      isLoading: true,
+      isAuthenticated : true,
+    }
+    await nextTick();
+    expect(wrapper.html()).toContain('Welcome Home');
   });
   it('Simple Click Test', async ()=>{
     // await wrapper.find('.other').trigger('click');

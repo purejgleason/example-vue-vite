@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-if="!isLoading">
+  <div class="wrapper" v-if="auth0 && !isLoading">
     <div class="links">
       <router-link to="/">
         Go to Home
@@ -12,7 +12,7 @@
       </router-link>
       <router-link
           to="/protected"
-          v-if="isAuthenticated"
+          v-if="auth0 && auth0.isAuthenticated"
       >
         protected
       </router-link>
@@ -21,8 +21,9 @@
   </div>
 </template>
 <script setup>
+import { ref } from "vue";
 import { useAuth0 } from "@auth0/auth0-vue";
-const { isAuthenticated, isLoading } = useAuth0();
+const auth0 = ref(useAuth0());
 </script>
 <style scoped>
 .links{
