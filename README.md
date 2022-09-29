@@ -21,6 +21,7 @@ This is a simple Vite application with things like testing, proxying, etc workin
          }
        }
        ```
+4. Generate the SSL cert and key using the script as `./proxy/gen-key-cert.sh`
 
 ## Run with Proxy
 
