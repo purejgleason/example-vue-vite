@@ -1,30 +1,30 @@
 import vue from '@vitejs/plugin-vue';
 import {defineConfig} from 'vitest/config';
-import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
+import {quasar, transformAssetUrls} from '@quasar/vite-plugin';
 import fs from 'fs';
 
 const getCert = ()=>{
-  try{
+  try {
     return fs.readFileSync('./proxy/host.crt');
-  } catch(ex){
-    console.error("Cert not found\n", ex);
+  } catch (ex) {
+    console.error('Cert not found\n', ex);
   }
-}
+};
 const getKey = ()=>{
-  try{
+  try {
     return fs.readFileSync('./proxy/host.key');
-  } catch(ex){
-    console.error("Key not found\n", ex);
+  } catch (ex) {
+    console.error('Key not found\n', ex);
   }
-}
+};
 
 const config = {
   plugins: [
     vue({
-      template: { transformAssetUrls }
+      template: {transformAssetUrls},
     }),
     quasar({
-      sassVariables: 'src/quasar-variables.sass'
+      sassVariables: 'src/quasar-variables.sass',
     }),
   ],
   build: {
@@ -56,6 +56,6 @@ const config = {
       reporter: ['html'],
     },
   },
-}
+};
 
 export default defineConfig(config);

@@ -3,7 +3,7 @@ import {mount} from '@vue/test-utils';
 import {mainRoutes} from '../src/router/index.mjs';
 import App from '../src/App.vue';
 import {nextTick} from 'vue';
-import { Quasar } from 'quasar';
+import {Quasar} from 'quasar';
 
 describe('App', ()=>{
   expect(App).toBeTruthy();
@@ -16,7 +16,7 @@ describe('App', ()=>{
       global: {
         plugins: [
           mainRoutes,
-          Quasar
+          Quasar,
         ],
       },
     });

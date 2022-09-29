@@ -2,7 +2,7 @@ import {describe, it, beforeAll, vi} from 'vitest';
 import {nextTick} from 'vue';
 import {mount} from '@vue/test-utils';
 import Home from '../../src/components/Home.vue';
-import { Quasar } from 'quasar';
+import {Quasar} from 'quasar';
 
 const onLogin = ()=>{ };
 const onLogout = ()=>{ };
@@ -25,7 +25,7 @@ describe('Home', ()=>{
       wrapper = mount(Home, {
         global: {
           plugins: [
-            Quasar
+            Quasar,
           ],
         },
       });
@@ -43,10 +43,10 @@ describe('Home', ()=>{
   });
   describe('logged out', ()=>{
     beforeAll(async ()=>{
-      wrapper = mount(Home,{
+      wrapper = mount(Home, {
         global: {
           plugins: [
-            Quasar
+            Quasar,
           ],
         },
       });
