@@ -23,6 +23,7 @@
     >
       Login
     </button>
+    <q-btn color="primary" icon="mail" label="On Left" />
   </div>
 </template>
 <script setup>

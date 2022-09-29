@@ -1,9 +1,15 @@
 import vue from '@vitejs/plugin-vue';
 import {defineConfig} from 'vitest/config';
+import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
 
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: { transformAssetUrls }
+    }),
+    quasar({
+      sassVariables: 'src/quasar-variables.sass'
+    }),
   ],
   build: {
     minify: true,

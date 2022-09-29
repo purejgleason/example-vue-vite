@@ -2,6 +2,11 @@ import {createApp} from 'vue';
 import App from './App.vue';
 import {mainRoutes} from './router/index.mjs';
 import {createAuth0} from '@auth0/auth0-vue';
+import { Quasar } from 'quasar'
+// Import icon libraries
+import '@quasar/extras/material-icons/material-icons.css'
+// Import Quasar css
+import 'quasar/src/css/index.sass'
 
 class VueApp {
   async bootstrap() {
@@ -20,8 +25,11 @@ class VueApp {
       console.info('No Auth0 Config Found, Authentication unavailable');
       this.app.config.globalProperties.$authConfigured = false;
     }
-    return this.app.use(mainRoutes)
-        .mount('#app');
+    this.app.use(Quasar, {
+      plugins: {}, // import Quasar plugins and add here
+    })
+    this.app.use(mainRoutes)
+    return this.app.mount('#app');
   }
 }
 

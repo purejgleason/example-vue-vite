@@ -12,6 +12,9 @@
     "start": "CLOUD_URL=https://pm.purepm.dev vite"
   },
   "devDependencies": {
+    "@auth0/auth0-vue": "latest",
+    "@quasar/extras": "latest",
+    "@quasar/vite-plugin": "latest",
     "@vitejs/plugin-vue": "latest",
     "@vitest/coverage-c8": "latest",
     "@vue/test-utils": "latest",
@@ -19,10 +22,11 @@
     "eslint-config-google": "latest",
     "eslint-plugin-vue": "latest",
     "happy-dom": "latest",
+    "quasar": "latest",
+    "sass": "^1.32.12",
     "vite": "latest",
     "vitest": "latest",
     "vue": "latest",
-    "vue-router": "^4.1.5",
-    "@auth0/auth0-vue": "latest"
+    "vue-router": "latest"
   }
 }
