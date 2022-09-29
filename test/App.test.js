@@ -3,6 +3,7 @@ import {mount} from '@vue/test-utils';
 import {mainRoutes} from '../src/router/index.mjs';
 import App from '../src/App.vue';
 import {nextTick} from 'vue';
+import {Quasar} from 'quasar';
 
 describe('App', ()=>{
   expect(App).toBeTruthy();
@@ -13,7 +14,10 @@ describe('App', ()=>{
     await mainRoutes.isReady();
     wrapper = mount(App, {
       global: {
-        plugins: [mainRoutes],
+        plugins: [
+          mainRoutes,
+          Quasar,
+        ],
       },
     });
     wrapper.vm.$.setupState.auth0 = {
