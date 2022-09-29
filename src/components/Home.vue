@@ -32,7 +32,7 @@ import {useAuth0} from '@auth0/auth0-vue';
 const auth0 = ref(useAuth0());
 const value = ref(0);
 const isAuthenticated = computed(()=>{
-  return !!auth0?.value?.isAuthenticated?.value;
+  return !!auth0?.value?.isAuthenticated;
 });
 const onClick = (event)=>{
   value.value+=1;

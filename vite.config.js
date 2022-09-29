@@ -1,6 +1,7 @@
 import vue from '@vitejs/plugin-vue';
 import {defineConfig} from 'vitest/config';
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
+import fs from 'fs';
 
 export default defineConfig({
   plugins: [
@@ -21,6 +22,10 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: process.env.PORT || 8080,
+    https: {
+      key: fs.readFileSync('./proxy/host.key'),
+      cert: fs.readFileSync('./proxy/host.crt'),
+    },
     proxy: {
       '/environment': {
         target: process.env.CLOUD_URL,

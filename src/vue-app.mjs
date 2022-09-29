@@ -17,6 +17,7 @@ class VueApp {
       console.info('Config Found!, Adding Auth0');
       this.app.config.globalProperties.$authConfigured = true;
       this.env.auth0.redirect_uri = window.location.origin;
+      this.env.auth0.cacheLocation = "localstorage",
       // TODO: Update on function
       this.env.auth0.client_id = this.env.auth0.clientId;
       // TODO Add scope
