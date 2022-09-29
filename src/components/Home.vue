@@ -23,6 +23,9 @@
     >
       Login
     </button>
+    <v-app>
+      <v-btn></v-btn>
+    </v-app>
   </div>
 </template>
 <script setup>
