@@ -8,7 +8,8 @@
   "scripts": {
     "test": "vitest run --coverage",
     "lint": "eslint \"**/*.js\" \"**/*.vue\" \"**/*.mjs\"",
-    "lint:fix": "eslint --fix \"**/*.js\" \"**/*.vue\" \"**/*.mjs\""
+    "lint:fix": "eslint --fix \"**/*.js\" \"**/*.vue\" \"**/*.mjs\"",
+    "start": "CLOUD_URL=https://pm.purepm.dev vite"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "latest",
@@ -21,6 +22,7 @@
     "vite": "latest",
     "vitest": "latest",
     "vue": "latest",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.5",
+    "@auth0/auth0-vue": "latest"
   }
 }
