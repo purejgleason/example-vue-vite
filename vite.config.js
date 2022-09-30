@@ -3,6 +3,11 @@ import {defineConfig} from 'vitest/config';
 import {quasar, transformAssetUrls} from '@quasar/vite-plugin';
 import fs from 'fs';
 
+if(process.env.CLOUD_URL == null){
+  console.error("Please declare the cloud function url or the app will not function");
+  process.exit(1);
+}
+
 const getCert = ()=>{
   try {
     return fs.readFileSync('./proxy/host.crt');
