@@ -6,10 +6,11 @@
   "author": "Jackie Gleason",
   "license": "MIT",
   "scripts": {
-    "test": "vitest run --coverage",
+    "test": "CLOUD_URL=https://pm.purepm.dev vitest run --coverage",
     "lint": "eslint \"**/*.js\" \"**/*.vue\" \"**/*.mjs\"",
     "lint:fix": "eslint --fix \"**/*.js\" \"**/*.vue\" \"**/*.mjs\"",
-    "start": "CLOUD_URL=https://pm.purepm.dev vite"
+    "start": "CLOUD_URL=https://pm.purepm.dev vite",
+    "build": "CLOUD_URL=https://pm.purepm.dev vite build"
   },
   "devDependencies": {
     "@auth0/auth0-vue": "latest",
@@ -22,8 +23,9 @@
     "eslint-config-google": "latest",
     "eslint-plugin-vue": "latest",
     "happy-dom": "latest",
+    "mitt": "latest",
     "quasar": "latest",
-    "sass": "^1.32.12",
+    "sass": "latest",
     "vite": "latest",
     "vitest": "latest",
     "vue": "latest",
