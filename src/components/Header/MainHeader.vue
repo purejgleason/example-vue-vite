@@ -70,7 +70,7 @@ const {
   idTokenClaims,
   loginWithRedirect,
   isLoading,
-  logout
+  logout,
 } = auth0.useAuth0();
 
 const tab = ref('home');

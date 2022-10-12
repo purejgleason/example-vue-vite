@@ -16,7 +16,7 @@ class VueApp {
     const response = await axios.get('/environment'); // eslint-disable-line no-unused-vars
     this.env = response.data;
     this.app = createApp(App);
-    this.app.provide("emitter", emitter);
+    this.app.provide('emitter', emitter);
     if (this.env.auth0) {
       console.info('Config Found!, Adding Auth0');
       this.app.config.globalProperties.$authConfigured = true;
