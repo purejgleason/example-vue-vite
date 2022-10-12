@@ -2,27 +2,12 @@
   <div>
     <h1>Welcome Home</h1>
     <h2>{{ value }}</h2>
-    <button
+    <q-btn
       class="increment"
       @click="onClick"
     >
       Test button
-    </button>
-
-    <button
-      v-if="isAuthenticated"
-      class="logout"
-      @click="auth0.logout"
-    >
-      Logout
-    </button>
-    <button
-      v-else
-      class="login"
-      @click="auth0.loginWithRedirect"
-    >
-      Login
-    </button>
+    </q-btn>
     <q-btn
       color="primary"
       icon="mail"
@@ -31,13 +16,8 @@
   </div>
 </template>
 <script setup>
-import {ref, computed} from 'vue';
-import {useAuth0} from '@auth0/auth0-vue';
-const auth0 = ref(useAuth0());
+import {ref} from 'vue';
 const value = ref(0);
-const isAuthenticated = computed(()=>{
-  return !!auth0?.value?.isAuthenticated;
-});
 const onClick = (event)=>{
   value.value+=1;
 };

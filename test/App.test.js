@@ -31,7 +31,6 @@ describe('App', ()=>{
     // await wrapper.find('.other').trigger('click');
     await mainRoutes.push('/other');
     await mainRoutes.isReady();
-    console.log(wrapper.html());
     expect(wrapper.html()).toContain('I Think you should be somewhere else');
   });
 });
